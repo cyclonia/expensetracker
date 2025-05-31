@@ -1,0 +1,431 @@
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.main-content {
+  display: flex;
+  justify-content: space-between;
+  flex-grow: 1;
+}
+
+.left-pane {
+  width: 60%;
+}
+
+.expense-form {
+  margin-bottom: 20px;
+}
+
+.expense-form input {
+  margin-right: 10px;
+}
+
+.right-pane {
+  width: 35%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end; /* or center if preferred */
+  overflow-x: auto;
+}
+
+
+.expense-tiles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: flex-end;   /* Or 'center', 'space-between', etc. */
+  align-items: flex-start;
+  max-width: 100%;
+}
+
+
+.expense-card {
+  padding: 15px;
+  border-radius: 8px;
+  width: 180px;
+  min-width: 150px;
+  max-width: 220px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  color: #333;
+  word-break: break-word;
+}
+
+
+.chart-container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 220px;
+  background: white;
+  border-top: 1px solid #ccc;
+  padding: 10px 20px;
+  box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.1);
+}
+.expense-form input,
+.expense-form button {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06);
+}
+
+.expense-form input:focus {
+  border-color: #4f46e5;
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2);
+}
+
+.expense-form button {
+  background-color: #4f46e5;
+  color: white;
+  cursor: pointer;
+  padding: 12px 24px;         /* Increased padding */
+  font-size: 16px;            /* Larger text */
+  border-radius: 8px;
+  border: none;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  transition: background-color 0.2s ease;
+}
+
+.expense-form button:hover {
+  background-color: #4338ca;
+}
+.clear-button {
+  background-color: #e11d48;
+  color: white;
+  padding: 12px 20px;
+  font-size: 14px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.2s ease;
+}
+
+.clear-button:hover {
+  background-color: #be123c;
+}
+.total-tile {
+  background-color: #2563eb;
+  color: white;
+  text-align: center;
+  padding: 15px 20px;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 10px;
+  margin: 30px 0 10px; /* top, right/left, bottom */
+  width: 100%;
+  box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.1);
+}
+.search-bar {
+  margin-bottom: 20px;
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 12px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: border-color 0.2s;
+}
+
+.search-bar input:focus {
+  border-color: #4f46e5;
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+}
+.expense-amount {
+  color: rgb(168, 49, 30); /* Tailwind blue-900 or pick another color */
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.salary-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.salary-input {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  outline: none;
+}
+
+.set-salary-btn {
+  background-color: #059669;
+  color: white;
+  font-size: 14px;
+  border-radius: 8px;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.set-salary-btn:hover {
+  background-color: #047857;
+}
+
+.salary-display {
+  margin-left: 15px;
+  font-weight: bold;
+  color: #0e7490;
+}
+
+.remaining-bar {
+  margin-bottom: 20px;
+  background-color: #fbbf24;
+  color: #27272a;
+  font-weight: bold;
+  font-size: 18px;
+  border-radius: 8px;
+  padding: 12px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.07);
+}
+
+.set-salary-btn {
+  background-color: #059669;
+  color: white;
+  font-size: 14px;
+  border-radius: 8px;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin-left: 10px;
+  transition: background 0.2s;
+}
+
+.set-salary-btn:hover {
+  background-color: #047857;
+}
+.remaining-tile {
+  background-color: #2563eb;
+  color: #fff;
+  font-weight: bold;
+  font-size: 22px;
+  padding: 22px 28px;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+  margin-bottom: 10px;
+  margin-right: 10px;
+  min-width: 210px;
+  min-height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Responsive: Make sure remaining-tile also scales well on mobile */
+@media (max-width: 600px) {
+  .remaining-tile {
+    font-size: 18px;
+    padding: 16px 10px;
+    min-width: 0;
+    width: 100%;
+    margin-right: 0;
+  }
+}
+
+/* Edit mode tile */
+.expense-card-editing {
+  background: #f1f5f9 !important;
+  border: 2px solid #2563eb;
+  box-shadow: 0 4px 16px rgba(37,99,235,0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 18px 16px;
+  z-index: 1;
+  transition: box-shadow 0.2s, border 0.2s;
+}
+
+/* Modern input styles */
+.edit-input {
+  font-size: 15px;
+  padding: 8px 10px;
+  border-radius: 7px;
+  border: 1.5px solid #a5b4fc;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  background: #fff;
+}
+
+.edit-input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37,99,235,0.08);
+}
+
+/* Button row for Save/Cancel */
+.edit-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 6px;
+}
+
+.edit-save {
+  background: #2563eb;
+  color: #fff;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 6px;
+  font-weight: 500;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.edit-save:hover {
+  background: #1e40af;
+}
+
+.edit-cancel {
+  background: #f3f4f6;
+  color: #22223b;
+  border: 1.5px solid #cbd5e1;
+  padding: 8px 18px;
+  border-radius: 6px;
+  font-weight: 500;
+  font-size: 15px;
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s;
+}
+
+.edit-cancel:hover {
+  background: #e0e7ef;
+  border-color: #2563eb;
+}
+
+.delete-expense-btn {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  background: #f87171;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  font-size: 17px;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  transition: background 0.15s;
+  z-index: 2;
+}
+.delete-expense-btn:hover {
+  background: #b91c1c;
+}
+.confirm-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(30, 41, 59, 0.22);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+}
+
+.confirm-dialog {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 8px 40px rgba(37,99,235,0.16);
+  padding: 32px 30px 24px 30px;
+  min-width: 320px;
+  text-align: center;
+  animation: popIn 0.18s cubic-bezier(.71,1.7,.36,.97);
+}
+
+@keyframes popIn {
+  0% { transform: scale(0.7); opacity: 0.5; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.confirm-actions {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  margin-top: 22px;
+}
+
+.confirm-btn {
+  font-size: 15px;
+  font-weight: 500;
+  padding: 8px 26px;
+  border-radius: 7px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.16s;
+}
+
+.confirm-yes {
+  background: #f87171;
+  color: #fff;
+}
+
+.confirm-yes:hover {
+  background: #b91c1c;
+}
+
+.confirm-no {
+  background: #f1f5f9;
+  color: #22223b;
+  border: 1.5px solid #cbd5e1;
+}
+
+.confirm-no:hover {
+  background: #dbeafe;
+  border-color: #2563eb;
+}
+
+.pdf-download-btn {
+  background: #4338ca;
+  color: #fff;
+  padding: 10px 24px;
+  border: none;
+  border-radius: 7px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  margin-bottom: 18px;
+  box-shadow: 0 2px 8px rgba(67, 56, 202, 0.06);
+  transition: background 0.15s;
+}
+.pdf-download-btn:hover {
+  background: #2563eb;
+}
+
+.piechart-corner {
+  position: fixed;
+  right: 10vw; /* Try 16px or even 8px for closer-to-center */
+  bottom: 16px;
+  z-index: 30;
+  background: white;
+  border-radius: 18px;
+  box-shadow: 0 6px 32px rgba(30,41,59,0.07);
+  padding: 8px 8px 0 8px;
+}
+
+
+@media (max-width: 600px) {
+  .piechart-corner {
+    width: 90vw;
+    right: 5vw;
+    bottom: 10px;
+    padding: 0;
+  }
+}
