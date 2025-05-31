@@ -1,0 +1,11 @@
+CREATE TABLE IF NOT EXISTS expense (
+  id BIGINT PRIMARY KEY,
+  description VARCHAR(255),
+  amount DOUBLE,
+  date DATE
+);
+
+CREATE TABLE IF NOT EXISTS salary (
+  id BIGINT PRIMARY KEY,
+  amount DOUBLE
+);
